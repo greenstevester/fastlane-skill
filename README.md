@@ -1,13 +1,25 @@
 # Fastlane Skill for Claude Code
 
-A Claude Code skill that sets up [Fastlane](https://fastlane.tools/) for iOS/macOS app automation.
+A Claude Code skill that sets up [Fastlane](https://fastlane.tools/) for complete iOS/macOS app automation and App Store distribution.
 
 ## What This Skill Does
 
-- Checks your environment (Xcode CLI tools, Homebrew, existing Fastlane setup)
-- Installs Fastlane via Homebrew (recommended for macOS)
-- Creates `fastlane/Appfile` and `fastlane/Fastfile` with common lanes
-- Configures lanes for testing, TestFlight, and App Store deployment
+- **Introspects your Xcode project** - Extracts bundle ID, version, team ID automatically
+- **Configures Fastlane** - Creates Appfile, Fastfile with common lanes
+- **Sets up App Store metadata** - Full `deliver` folder structure for managing App Store listing from text files
+- **Xcode Cloud integration** - Optional ci_scripts for automated deployment
+- **API key setup** - Guidance for CI/CD authentication
+
+### Supported Workflows
+
+| Lane | Description |
+|------|-------------|
+| `test` | Run unit tests |
+| `beta` | Build + upload to TestFlight |
+| `release` | Build + upload to App Store |
+| `metadata` | Update App Store listing (no build) |
+| `screenshots` | Upload screenshots to App Store |
+| `sync_signing` | Sync certificates with match |
 
 ## Quick Start
 
@@ -46,29 +58,61 @@ Navigate to your iOS/macOS project directory and run:
 /setup-fastlane
 ```
 
-Or specify a project path:
-
-```
-/setup-fastlane ./path/to/ios/project
-```
-
 ## What Gets Created
 
-| File | Purpose |
-|------|---------|
-| `fastlane/Appfile` | App metadata (bundle ID, team ID) |
-| `fastlane/Fastfile` | Lane definitions |
-| `Gemfile` (optional) | For CI/CD reproducibility |
+```
+fastlane/
+├── Appfile                    # App config (bundle ID, team ID)
+├── Fastfile                   # Lane definitions
+├── metadata/
+│   ├── en-US/
+│   │   ├── name.txt           # App name
+│   │   ├── subtitle.txt       # App subtitle
+│   │   ├── description.txt    # Full description
+│   │   ├── keywords.txt       # Search keywords
+│   │   ├── release_notes.txt  # What's New
+│   │   └── ...                # URLs, promotional text
+│   ├── copyright.txt
+│   ├── primary_category.txt
+│   └── secondary_category.txt
+├── screenshots/
+│   └── en-US/
+│       ├── iPhone 6.5/        # iPhone 15 Pro Max
+│       ├── iPhone 5.5/        # iPhone 8 Plus
+│       └── iPad Pro 12.9/     # iPad
+└── review_information/
+    ├── demo_user.txt          # Demo account for review
+    └── notes.txt              # Notes for App Review
 
-## Available Lanes
+ci_scripts/                    # Xcode Cloud (optional)
+├── ci_post_clone.sh           # Install dependencies
+└── ci_post_xcodebuild.sh      # Run Fastlane after build
+```
 
-After setup, you'll have these lanes:
+## App Store Metadata Management
+
+The skill sets up `fastlane deliver` for managing your App Store listing from version-controlled text files:
 
 ```bash
-fastlane ios test      # Run tests
-fastlane ios beta      # Build and upload to TestFlight
-fastlane ios release   # Build and upload to App Store
+# Download existing metadata from App Store Connect
+fastlane deliver download_metadata
+fastlane deliver download_screenshots
+
+# Push metadata to App Store Connect
+fastlane ios metadata          # Update listing (no build)
+fastlane deliver               # Full upload with binary
 ```
+
+Edit files in `fastlane/metadata/en-US/` and commit them to git for versioned App Store listings.
+
+## Xcode Cloud Integration
+
+For Xcode Cloud + Fastlane, the skill creates `ci_scripts/` that run Fastlane after successful builds:
+
+1. **ci_post_clone.sh** - Installs Homebrew and Fastlane
+2. **ci_post_xcodebuild.sh** - Runs appropriate lane based on workflow name
+
+Configure Xcode Cloud workflows named "Beta", "Release", or "Metadata" to trigger the corresponding Fastlane lane.
 
 ## Requirements
 
