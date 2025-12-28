@@ -1,15 +1,21 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "fastlane-skill",
-  "description": "Claude Code skills for iOS/macOS app automation with Fastlane",
   "version": "1.0.0",
-  "owner": "greenstevester",
-  "author": "greenstevester",
+  "description": "Claude Code skills for iOS/macOS app automation with Fastlane",
+  "owner": {
+    "name": "greenstevester"
+  },
   "repository": "https://github.com/greenstevester/fastlane-skill",
   "plugins": [
     {
       "name": "setup-fastlane",
-      "path": "../skills/setup-fastlane.md",
-      "description": "Set up Fastlane for iOS/macOS app automation with Homebrew"
+      "description": "Set up Fastlane for iOS/macOS app automation with Homebrew",
+      "source": "./skills/setup-fastlane.md",
+      "version": "1.0.0",
+      "author": {
+        "name": "greenstevester"
+      }
     }
   ]
 }
