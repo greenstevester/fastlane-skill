@@ -9,44 +9,48 @@ A Claude Code skill that sets up [Fastlane](https://fastlane.tools/) for iOS/mac
 - Creates `fastlane/Appfile` and `fastlane/Fastfile` with common lanes
 - Configures lanes for testing, TestFlight, and App Store deployment
 
-## Installation
+## Quick Start
 
-### Option 1: Plugin Marketplace (Recommended)
+### 1. Install Dependencies (one-time setup)
 
 ```bash
-# In Claude Code, run:
+# Xcode Command Line Tools
+xcode-select --install
+
+# Homebrew (if not installed) - see https://brew.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Fastlane
+brew install fastlane
+```
+
+### 2. Install the Skill
+
+**Option A: Plugin Marketplace (Recommended)**
+```
 /plugin marketplace add greenstevester/fastlane-skill
 /plugin install setup-fastlane@fastlane-skill
 ```
 
-### Option 2: Manual Installation
-
-Download the skill directly to your Claude commands folder:
-
+**Option B: Manual Download**
 ```bash
 curl -o ~/.claude/commands/setup-fastlane.md \
   https://raw.githubusercontent.com/greenstevester/fastlane-skill/main/skills/setup-fastlane.md
 ```
 
-## Usage
+### 3. Run It
 
-Once installed, run in Claude Code:
+Navigate to your iOS/macOS project directory and run:
 
 ```
 /setup-fastlane
 ```
 
-Or with a specific project path:
+Or specify a project path:
 
 ```
 /setup-fastlane ./path/to/ios/project
 ```
-
-## Prerequisites
-
-- macOS
-- Xcode Command Line Tools (`xcode-select --install`)
-- Homebrew (`brew.sh`)
 
 ## What Gets Created
 
@@ -66,7 +70,16 @@ fastlane ios beta      # Build and upload to TestFlight
 fastlane ios release   # Build and upload to App Store
 ```
 
-## Why Homebrew?
+## Requirements
+
+| Dependency | Install Command | Notes |
+|------------|-----------------|-------|
+| macOS | - | Required for Xcode |
+| Xcode CLI Tools | `xcode-select --install` | Build tools |
+| Homebrew | See [brew.sh](https://brew.sh) | Package manager |
+| Fastlane | `brew install fastlane` | iOS automation |
+
+## Why Homebrew for Fastlane?
 
 This skill uses Homebrew to install Fastlane because:
 
