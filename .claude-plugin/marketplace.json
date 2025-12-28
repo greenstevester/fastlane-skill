@@ -1,10 +1,11 @@
 {
-  "name": "Fastlane Skills",
+  "name": "fastlane-skill",
   "description": "Claude Code skills for iOS/macOS app automation with Fastlane",
   "version": "1.0.0",
+  "owner": "greenstevester",
   "author": "greenstevester",
   "repository": "https://github.com/greenstevester/fastlane-skill",
-  "skills": [
+  "plugins": [
     {
       "name": "setup-fastlane",
       "path": "../skills/setup-fastlane.md",
