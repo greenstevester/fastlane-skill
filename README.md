@@ -11,6 +11,14 @@
 
 > One command to set up Fastlane for iOS/macOS apps - from zero to App Store ready.
 
+## Skills
+
+| Skill | Description |
+|-------|-------------|
+| `/setup-fastlane` | Generate complete Fastlane configuration from Xcode project |
+| `/beta` | Build and upload to TestFlight for beta testing |
+| `/release` | Submit to App Store for review and production release |
+
 ## What
 
 This skill generates a complete Fastlane configuration by introspecting your Xcode project. It extracts bundle ID, team ID, and version from your `.pbxproj`, then creates:
@@ -71,6 +79,20 @@ Navigate to your iOS/macOS project and run:
 ```bash
 fastlane lanes   # Should list: test, beta, release, metadata, screenshots, sync_signing
 ```
+
+### 4. Release Your App
+
+**TestFlight Beta:**
+```
+/beta
+```
+Syncs certificates, increments build number, builds, and uploads to TestFlight.
+
+**App Store Release:**
+```
+/release
+```
+Submits an existing TestFlight build to the App Store for review.
 
 ## App Store Metadata
 
