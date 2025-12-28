@@ -2,3 +2,6 @@
 *.swp
 *.swo
 *~
+
+# Marketing materials - local only, never commit
+marketing/
