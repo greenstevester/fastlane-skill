@@ -7,7 +7,7 @@
   "skills": [
     {
       "name": "setup-fastlane",
-      "path": "skills/setup-fastlane.md",
+      "path": "../skills/setup-fastlane.md",
       "description": "Set up Fastlane for iOS/macOS app automation with Homebrew"
     }
   ]

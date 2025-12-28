@@ -9,8 +9,10 @@ This is a Claude Code skill plugin that automates Fastlane setup for iOS/macOS p
 ## Repository Structure
 
 ```
-skills/setup-fastlane.md   # The main skill definition (markdown with embedded commands)
-marketplace.json           # Plugin registry metadata for Claude Code marketplace
+.claude-plugin/
+  marketplace.json         # Plugin registry metadata (required location for Claude Code)
+skills/
+  setup-fastlane.md        # The main skill definition (markdown with embedded commands)
 todos.md                   # Roadmap and future skills
 ```
 
