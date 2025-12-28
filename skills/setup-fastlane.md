@@ -202,7 +202,9 @@ case "$CI_WORKFLOW" in
         fastlane ios metadata
         ;;
     *)
-        echo "Unknown workflow: $CI_WORKFLOW"
+        echo "⚠️  Unknown workflow: $CI_WORKFLOW - skipping Fastlane"
+        echo "    Configure workflow name as 'Beta', 'Release', or 'Metadata' to trigger Fastlane"
+        exit 1
         ;;
 esac
 ```
@@ -215,7 +217,12 @@ set -e
 # Install Homebrew (required for Fastlane)
 if ! command -v brew &> /dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    # Add Homebrew to PATH (Apple Silicon or Intel)
+    if [[ -f /opt/homebrew/bin/brew ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    elif [[ -f /usr/local/bin/brew ]]; then
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
 fi
 
 # Install Fastlane
