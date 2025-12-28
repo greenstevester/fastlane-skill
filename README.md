@@ -30,7 +30,7 @@ Plus: Full `fastlane/metadata/` folder structure for version-controlled App Stor
 
 - **It's Nitrous oxide** - to super-charge your Fastlane setup/usage, so your focus is shipping
 - **Zero config** - no manual entry of bundle IDs or team IDs
-- **CI-ready** - optional Xcode Cloud integration scripts
+- **CI-ready** - optional [Xcode Cloud integration scripts](docs/xcode-cloud.md)
 
 ## How
 
