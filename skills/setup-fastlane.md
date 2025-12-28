@@ -8,6 +8,8 @@ allowed-tools: Bash, Read, Write, Edit, Glob
 
 I'll set up Fastlane for your iOS/macOS project with full App Store distribution support.
 
+> **IMPORTANT**: This skill uses Homebrew-installed Fastlane. DO NOT create a Gemfile or run `bundle install` - Bundler 4.x is incompatible with Fastlane. Run lanes directly with `fastlane ios [lane]`.
+
 ### Current Environment Check
 - Xcode CLI Tools: !`xcode-select -p 2>/dev/null && echo "✓ Installed" || echo "✗ Not installed"`
 - Homebrew: !`brew --version 2>/dev/null | head -1 || echo "✗ Not installed"`
@@ -304,10 +306,22 @@ fastlane/
 ci_scripts/            # Xcode Cloud integration (optional)
 ├── ci_post_clone.sh
 └── ci_post_xcodebuild.sh
-
-Gemfile                # For CI reproducibility (optional)
 ```
 
 **Do NOT commit:**
 - `fastlane/api_key.json` (contains secrets)
 - `fastlane/report.xml` (build artifacts)
+
+---
+
+## Important: Use Homebrew, Not Bundler
+
+This skill uses Fastlane installed via Homebrew (`brew install fastlane`).
+
+**DO NOT create a Gemfile or run `bundle install`** - Bundler 4.x is incompatible with Fastlane's requirements (< 3.0.0). The Homebrew installation avoids all Ruby version conflicts.
+
+Run lanes directly:
+```bash
+fastlane ios test
+fastlane ios beta
+```
