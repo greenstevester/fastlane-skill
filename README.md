@@ -11,7 +11,28 @@
 
 > One command to set up Fastlane for iOS/macOS apps - from zero to App Store ready.
 
-## Quick Start (5 minutes)
+## What
+
+A Claude Code skill that generates a complete Fastlane configuration by introspecting your Xcode project. It extracts bundle ID, team ID, and version from your `.pbxproj`, then creates:
+
+| Lane | Command | Description |
+|------|---------|-------------|
+| `test` | `fastlane ios test` | Run unit tests |
+| `beta` | `fastlane ios beta` | Build + TestFlight |
+| `release` | `fastlane ios release` | Build + App Store |
+| `metadata` | `fastlane ios metadata` | Update listing (no build) |
+| `screenshots` | `fastlane ios screenshots` | Upload screenshots |
+| `sync_signing` | `fastlane ios sync_signing` | Sync certificates |
+
+Plus: Full `fastlane/metadata/` folder structure for version-controlled App Store listings.
+
+## Why
+
+- **Zero config** - no manual entry of bundle IDs or team IDs
+- **Best practices** - Homebrew-based install avoids Ruby 4.0 compatibility issues
+- **CI-ready** - optional Xcode Cloud integration scripts
+
+## How
 
 **Prerequisites:** macOS with Xcode CLI tools, [Homebrew](https://brew.sh), and Fastlane (`brew install fastlane`)
 
@@ -50,19 +71,6 @@ Navigate to your iOS/macOS project and run:
 ```bash
 fastlane lanes   # Should list: test, beta, release, metadata, screenshots, sync_signing
 ```
-
-## What You Get
-
-| Lane | Command | Description |
-|------|---------|-------------|
-| `test` | `fastlane ios test` | Run unit tests |
-| `beta` | `fastlane ios beta` | Build + TestFlight |
-| `release` | `fastlane ios release` | Build + App Store |
-| `metadata` | `fastlane ios metadata` | Update listing (no build) |
-| `screenshots` | `fastlane ios screenshots` | Upload screenshots |
-| `sync_signing` | `fastlane ios sync_signing` | Sync certificates |
-
-Plus: Full `fastlane/metadata/` folder structure for version-controlled App Store listings.
 
 ## App Store Metadata
 
