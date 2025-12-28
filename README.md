@@ -17,14 +17,23 @@
 
 ### 1. Install the Skill
 
-**Option A: In Claude Code** (type this in Claude Code, not terminal)
+**Global Install** (available in all projects)
+
+In Claude Code:
 ```
 /plugin marketplace add greenstevester/fastlane-skill
 ```
 
-**Option B: Manual Download** (run in terminal)
+Or via terminal:
 ```bash
 curl -o ~/.claude/commands/setup-fastlane.md \
+  https://raw.githubusercontent.com/greenstevester/fastlane-skill/main/skills/setup-fastlane.md
+```
+
+**Project-Only Install** (available only in current project)
+```bash
+mkdir -p .claude/commands
+curl -o .claude/commands/setup-fastlane.md \
   https://raw.githubusercontent.com/greenstevester/fastlane-skill/main/skills/setup-fastlane.md
 ```
 
