@@ -28,7 +28,7 @@ Plus: Full `fastlane/metadata/` folder structure for version-controlled App Stor
 
 ## Why
 
-- **Nitrous oxide** - turbo charge your Fastlane setup and repeated usage, because you just want to ship
+- **It's Nitrous oxide** - turbo charge your Fastlane setup and repeated usage, because you just want to ship
 - **Zero config** - no manual entry of bundle IDs or team IDs
 - **CI-ready** - optional Xcode Cloud integration scripts
 
