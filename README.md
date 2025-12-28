@@ -13,7 +13,7 @@
 
 ## What
 
-A Claude Code skill that generates a complete Fastlane configuration by introspecting your Xcode project. It extracts bundle ID, team ID, and version from your `.pbxproj`, then creates:
+This skill generates a complete Fastlane configuration by introspecting your Xcode project. It extracts bundle ID, team ID, and version from your `.pbxproj`, then creates:
 
 | Lane | Command | Description |
 |------|---------|-------------|
@@ -28,8 +28,8 @@ Plus: Full `fastlane/metadata/` folder structure for version-controlled App Stor
 
 ## Why
 
+- **Nitrous oxide** - turbo charge your Fastlane setup and repeated usage, because you just want to ship
 - **Zero config** - no manual entry of bundle IDs or team IDs
-- **Best practices** - Homebrew-based install avoids Ruby 4.0 compatibility issues
 - **CI-ready** - optional Xcode Cloud integration scripts
 
 ## How
