@@ -21,18 +21,18 @@
 
 ## What
 
-This skill generates a complete Fastlane configuration by introspecting your Xcode project. It extracts bundle ID, team ID, and version from your `.pbxproj`, then creates:
+Generates a complete Fastlane configuration by introspecting your Xcode project (extracts bundle ID, team ID, version from `.pbxproj`):
 
-| Lane | Command | Description |
-|------|---------|-------------|
-| `test` | `fastlane ios test` | Run unit tests |
-| `beta` | `fastlane ios beta` | Build + TestFlight |
-| `release` | `fastlane ios release` | Build + App Store |
-| `metadata` | `fastlane ios metadata` | Update listing (no build) |
-| `screenshots` | `fastlane ios screenshots` | Upload screenshots |
-| `sync_signing` | `fastlane ios sync_signing` | Sync certificates |
+| Lane | Description |
+|------|-------------|
+| `test` | Run unit tests |
+| `beta` | Build + upload to TestFlight |
+| `release` | Submit TestFlight build to App Store |
+| `lint` | Run SwiftLint |
+| `ci` | Full CI workflow (lint → build → test) |
+| `certificates_*` | Sync signing via `match` |
 
-Plus: Full `fastlane/metadata/` folder structure for version-controlled App Store listings.
+Plus: `Appfile`, `Matchfile`, `Deliverfile`, and metadata folder structure.
 
 ## Why
 
@@ -77,7 +77,7 @@ Navigate to your iOS/macOS project and run:
 ### 3. Verify
 
 ```bash
-fastlane lanes   # Should list: test, beta, release, metadata, screenshots, sync_signing
+fastlane lanes   # Lists: test, beta, release, lint, ci, certificates_*, etc.
 ```
 
 ### 4. Release Your App
@@ -113,9 +113,10 @@ fastlane ios metadata
 
 | Issue | Solution |
 |-------|----------|
-| No Xcode project detected | Run from directory containing `.xcodeproj` |
+| No Xcode project detected | Run from directory containing `.xcodeproj` (works with nested projects too) |
 | Bundle ID not found | Ensure project has `PRODUCT_BUNDLE_IDENTIFIER` set |
 | Fastlane not found | Run `brew install fastlane` |
+| Code signing errors | Run `fastlane certificates_appstore` after setting up `match` |
 
 ## Contributing
 
