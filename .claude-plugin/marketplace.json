@@ -16,6 +16,24 @@
       "author": {
         "name": "greenstevester"
       }
+    },
+    {
+      "name": "beta",
+      "description": "Upload builds to TestFlight for beta testing",
+      "source": "./skills/beta.md",
+      "version": "1.0.0",
+      "author": {
+        "name": "greenstevester"
+      }
+    },
+    {
+      "name": "release",
+      "description": "Submit app to the App Store with metadata and screenshots",
+      "source": "./skills/release.md",
+      "version": "1.0.0",
+      "author": {
+        "name": "greenstevester"
+      }
     }
   ]
 }
