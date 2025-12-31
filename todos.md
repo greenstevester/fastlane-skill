@@ -2,19 +2,17 @@
 
 ## Marketplace Submission
 
-- [ ] Submit `setup-fastlane` skill to [SkillsMP](https://skillsmp.com/)
+- [x] Submit to [SkillsMP](https://skillsmp.com/) — [PR #36](https://github.com/travisvn/awesome-claude-skills/pull/36)
 
 ## Additional Skills to Create
 
-Based on SkillsMP gap analysis (Dec 2024):
-
 - [ ] **match** - Code signing certificate management skill
-- [ ] **pilot** - TestFlight upload and management skill
 - [ ] **snapshot** - Automated App Store screenshot skill
-- [ ] **deliver** - App Store metadata and submission skill
 - [ ] **gym** - Build and archive iOS apps skill
+- [x] ~~**pilot**~~ - Covered by `beta.md`
+- [x] ~~**deliver**~~ - Covered by `release.md`
 
-## Improvements to Existing Skill
+## Improvements to Existing Skills
 
 - [ ] Add support for workspace (`.xcworkspace`) detection
 - [ ] Add App Store Connect API key setup guidance
@@ -23,6 +21,6 @@ Based on SkillsMP gap analysis (Dec 2024):
 
 ## Notes
 
-- No Fastlane skills currently exist on SkillsMP - first mover opportunity
-- SwiftUI skills exist: "Build iPhone Apps", "Build macOS Apps"
-- Consider bundling related skills into a single "ios-automation" plugin
+- First Fastlane skills on SkillsMP
+- Three skills available: `setup-fastlane`, `beta`, `release`
+- Consider adding `match` next (code signing is a common pain point)
