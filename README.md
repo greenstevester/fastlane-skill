@@ -13,7 +13,7 @@
 
 ## Why Fastlane?
 
-[Fastlane](https://fastlane.tools) is the industry-standard automation tool for iOS and Android deployment, trusted by companies like Google, Uber, and Airbnb.
+[Fastlane](https://fastlane.tools) is the industry-standard automation tool for iOS and Android deployment, trusted by companies like Google, Uber, and Airbnb. Kudos to all the contributors who saved us from the joy of manually uploading 47 screenshots at 2am while questioning our career choices.
 
 **What it does:**
 - 🚀 Automates screenshots, beta deployment, App Store releases, and code signing
