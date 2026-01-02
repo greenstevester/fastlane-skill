@@ -28,7 +28,7 @@
 
 ## Why This Skill?
 
-Fastlane is powerful but has a steep learning curve. This skill removes the friction:
+Fastlane is powerful and you need to read the docs carefully to use it correctly. This skill removes the friction:
 
 | Without This Skill | With This Skill |
 |--------------------|-----------------|
