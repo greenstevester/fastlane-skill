@@ -6,21 +6,21 @@
 
 ## Additional Skills to Create
 
-- [ ] **match** - Code signing certificate management skill
-- [ ] **snapshot** - Automated App Store screenshot skill
+- [x] **match** - Code signing certificate management skill
+- [x] **snapshot** - Automated App Store screenshot skill
 - [ ] **gym** - Build and archive iOS apps skill
 - [x] ~~**pilot**~~ - Covered by `beta.md`
 - [x] ~~**deliver**~~ - Covered by `release.md`
 
 ## Improvements to Existing Skills
 
-- [ ] Add support for workspace (`.xcworkspace`) detection
-- [ ] Add App Store Connect API key setup guidance
+- [x] Add support for workspace (`.xcworkspace`) detection
+- [x] Add App Store Connect API key setup guidance (in `match.md` CI/CD section)
 - [ ] Add CI/CD integration examples (GitHub Actions, Bitrise)
-- [ ] Add `Matchfile` template generation
+- [x] Add `Matchfile` template generation (in `match.md`)
 
 ## Notes
 
 - First Fastlane skills on SkillsMP
-- Three skills available: `setup-fastlane`, `beta`, `release`
-- Consider adding `match` next (code signing is a common pain point)
+- Five skills available: `setup-fastlane`, `beta`, `release`, `match`, `snapshot`
+- Version bumped to 1.1.0 with workspace detection improvements

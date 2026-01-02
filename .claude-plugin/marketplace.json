@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "fastlane-skill",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Claude Code skills for iOS/macOS app automation with Fastlane",
   "owner": {
     "name": "greenstevester"
@@ -12,7 +12,7 @@
       "name": "setup-fastlane",
       "description": "Set up Fastlane for iOS/macOS app automation with Homebrew",
       "source": "./skills/setup-fastlane.md",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "greenstevester"
       }
@@ -30,6 +30,24 @@
       "name": "release",
       "description": "Submit app to the App Store with metadata and screenshots",
       "source": "./skills/release.md",
+      "version": "1.0.0",
+      "author": {
+        "name": "greenstevester"
+      }
+    },
+    {
+      "name": "match",
+      "description": "Set up Match for iOS code signing certificate management",
+      "source": "./skills/match.md",
+      "version": "1.0.0",
+      "author": {
+        "name": "greenstevester"
+      }
+    },
+    {
+      "name": "snapshot",
+      "description": "Automate App Store screenshot capture across devices and languages",
+      "source": "./skills/snapshot.md",
       "version": "1.0.0",
       "author": {
         "name": "greenstevester"

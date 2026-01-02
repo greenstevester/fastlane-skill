@@ -17,7 +17,9 @@ I'll set up Fastlane for your iOS/macOS project with full App Store distribution
 - Existing Fastlane config: !`ls -la fastlane/ 2>/dev/null | head -3 || echo "No fastlane directory"`
 
 ### App Introspection
-- Xcode projects: !`find . -maxdepth 3 \( -name "*.xcodeproj" -o -name "*.xcworkspace" \) 2>/dev/null | head -5`
+- Workspaces (.xcworkspace): !`find . -maxdepth 3 -name "*.xcworkspace" ! -path "*/xcodeproj/*" 2>/dev/null | head -3 || echo "None found"`
+- Projects (.xcodeproj): !`find . -maxdepth 3 -name "*.xcodeproj" 2>/dev/null | head -3 || echo "None found"`
+- Project type: !`if find . -maxdepth 3 -name "*.xcworkspace" ! -path "*/xcodeproj/*" 2>/dev/null | grep -q .; then echo "Workspace (use workspace: parameter)"; else echo "Project (use project: parameter)"; fi`
 - Bundle ID: !`grep -r "PRODUCT_BUNDLE_IDENTIFIER" --include="*.pbxproj" . 2>/dev/null | head -1 | sed 's/.*= //' | tr -d '";'`
 - App Version: !`grep -r "MARKETING_VERSION" --include="*.pbxproj" . 2>/dev/null | head -1 | sed 's/.*= //' | tr -d '";'`
 - Team ID: !`grep -r "DEVELOPMENT_TEAM" --include="*.pbxproj" . 2>/dev/null | head -1 | sed 's/.*= //' | tr -d '";'`
@@ -72,22 +74,46 @@ Complete lane definitions:
 default_platform(:ios)
 
 platform :ios do
+  # ============================================================
+  # CONFIGURATION - Update these values for your project
+  # ============================================================
+  # Use ONE of these depending on your project type:
+  #   workspace: "YourApp.xcworkspace"  # For CocoaPods, SPM, multi-project
+  #   project: "YourApp.xcodeproj"      # For single-project setups
+  # ============================================================
+
   desc "Run all tests"
   lane :test do
-    scan(scheme: "{{SCHEME}}")
+    scan(
+      scheme: "{{SCHEME}}",
+      # workspace: "{{WORKSPACE}}",  # Uncomment for workspace projects
+      # project: "{{PROJECT}}"       # Uncomment for single-project
+    )
   end
 
   desc "Build for TestFlight (Beta)"
-  lane :beta do
-    increment_build_number
-    gym(scheme: "{{SCHEME}}", export_method: "app-store")
+  lane :beta do |options|
+    match(type: "appstore", readonly: true)
+    increment_build_number unless options[:skip_build_increment]
+    gym(
+      scheme: "{{SCHEME}}",
+      # workspace: "{{WORKSPACE}}",  # Uncomment for workspace projects
+      # project: "{{PROJECT}}",      # Uncomment for single-project
+      export_method: "app-store"
+    )
     pilot(skip_waiting_for_build_processing: true)
   end
 
   desc "Build and release to App Store"
   lane :release do
+    match(type: "appstore", readonly: true)
     increment_build_number
-    gym(scheme: "{{SCHEME}}", export_method: "app-store")
+    gym(
+      scheme: "{{SCHEME}}",
+      # workspace: "{{WORKSPACE}}",  # Uncomment for workspace projects
+      # project: "{{PROJECT}}",      # Uncomment for single-project
+      export_method: "app-store"
+    )
     deliver(
       submit_for_review: false,
       automatic_release: false,
@@ -121,6 +147,8 @@ platform :ios do
   end
 end
 ```
+
+> **Workspace vs Project**: If your project has a `.xcworkspace` file (CocoaPods, SwiftPM with local packages), uncomment the `workspace:` lines. For simple single-project setups, use `project:` instead.
 
 ---
 
