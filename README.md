@@ -70,14 +70,15 @@ curl -o .claude/commands/setup-fastlane.md \
 
 **Update to Latest Version**
 
-If you installed via marketplace:
+Refresh the marketplace to pull latest changes:
 ```
-/plugin marketplace refresh greenstevester/fastlane-skill
+/plugin marketplace update fastlane-skill
 ```
 
 Or reinstall to get the latest:
 ```
-/plugin marketplace add greenstevester/fastlane-skill
+/plugin uninstall fastlane-skill@fastlane-skill
+/plugin install fastlane-skill@fastlane-skill
 ```
 
 Then restart Claude Code to load the updated skills.
