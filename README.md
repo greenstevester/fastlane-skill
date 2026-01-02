@@ -9,17 +9,19 @@
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-purple.svg)](https://claude.ai/code)
 [![Fastlane](https://img.shields.io/badge/Fastlane-00F200?logo=fastlane&logoColor=white)](https://fastlane.tools/)
 
-> One command to set up Fastlane for iOS/macOS apps - from zero to App Store ready.
+> 5 modular plugins for iOS/macOS app automation - install only what you need.
 
-## Skills
+## Plugins
 
-| Skill | Description |
-|-------|-------------|
-| `/setup-fastlane` | Generate complete Fastlane configuration from Xcode project |
-| `/beta` | Build and upload to TestFlight for beta testing |
-| `/release` | Submit to App Store for review and production release |
-| `/match` | Set up code signing certificate management |
-| `/snapshot` | Automate App Store screenshot capture |
+This marketplace provides **5 independent plugins** - install all or pick what you need:
+
+| Plugin | Skill | Description |
+|--------|-------|-------------|
+| `setup-fastlane` | `/setup-fastlane` | Generate complete Fastlane configuration from Xcode project |
+| `beta` | `/beta` | Build and upload to TestFlight for beta testing |
+| `release` | `/release` | Submit to App Store for review and production release |
+| `match` | `/match` | Set up code signing certificate management |
+| `snapshot` | `/snapshot` | Automate App Store screenshot capture |
 
 ## What
 
@@ -46,44 +48,37 @@ Plus: `Appfile`, `Matchfile`, `Deliverfile`, and metadata folder structure.
 
 **Prerequisites:** macOS with Xcode CLI tools, [Homebrew](https://brew.sh), and Fastlane (`brew install fastlane`)
 
-### 1. Install the Skill
+### 1. Add the Marketplace
 
-**Global Install** (available in all projects)
-
-In Claude Code:
 ```
 /plugin marketplace add greenstevester/fastlane-skill
 ```
 
-Or via terminal:
-```bash
-curl -o ~/.claude/commands/setup-fastlane.md \
-  https://raw.githubusercontent.com/greenstevester/fastlane-skill/main/skills/setup-fastlane.md
+### 2. Install Plugins
+
+**Install all plugins:**
+```
+/plugin install setup-fastlane@fastlane-skill
+/plugin install beta@fastlane-skill
+/plugin install release@fastlane-skill
+/plugin install match@fastlane-skill
+/plugin install snapshot@fastlane-skill
 ```
 
-**Project-Only Install** (available only in current project)
-```bash
-mkdir -p .claude/commands
-curl -o .claude/commands/setup-fastlane.md \
-  https://raw.githubusercontent.com/greenstevester/fastlane-skill/main/skills/setup-fastlane.md
+**Or install only what you need:**
+```
+/plugin install setup-fastlane@fastlane-skill   # Just the initial setup
+/plugin install match@fastlane-skill            # Just code signing
 ```
 
-**Update to Latest Version**
-
-Refresh the marketplace to pull latest changes:
+**Update to latest version:**
 ```
 /plugin marketplace update fastlane-skill
 ```
 
-Or reinstall to get the latest:
-```
-/plugin uninstall fastlane-skill@fastlane-skill
-/plugin install fastlane-skill@fastlane-skill
-```
+Then restart Claude Code to load the plugins.
 
-Then restart Claude Code to load the updated skills.
-
-### 2. Run It
+### 3. Run It
 
 Navigate to your iOS/macOS project and run:
 
@@ -91,13 +86,13 @@ Navigate to your iOS/macOS project and run:
 /setup-fastlane
 ```
 
-### 3. Verify
+### 4. Verify
 
 ```bash
 fastlane lanes   # Lists: test, beta, release, lint, ci, certificates_*, etc.
 ```
 
-### 4. Release Your App
+### 5. Release Your App
 
 **TestFlight Beta:**
 ```
@@ -164,13 +159,15 @@ First remove any existing installation:
 /plugin marketplace remove fastlane-skill
 ```
 
-Then add local directory as marketplace:
+Then add local directory as marketplace and install plugins:
 ```
 /plugin marketplace add /path/to/fastlane-skill
-/plugin install fastlane-skill@fastlane-skill
+/plugin install setup-fastlane@fastlane-skill
+/plugin install match@fastlane-skill
+# ... install whichever plugins you want to test
 ```
 
-Restart Claude Code to load the skills.
+Restart Claude Code to load the plugins.
 
 ## Contributing
 
