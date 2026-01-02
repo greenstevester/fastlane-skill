@@ -65,30 +65,28 @@ Restart Claude Code.
 
 Navigate to your iOS/macOS project and ask Claude naturally:
 
-### Initial Setup
-> "Set up Fastlane for this project"
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            App Release Workflow                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 
-Creates `Appfile`, `Fastfile`, lanes, and metadata structure by introspecting your Xcode project.
+  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+  │  SETUP   │───▶│  CERTS   │───▶│  SCREENS │───▶│   BETA   │───▶│ RELEASE  │
+  └──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘
+       │               │               │               │               │
+       ▼               ▼               ▼               ▼               ▼
+  "Set up         "Set up Match    "Automate       "Upload to      "Submit to
+   Fastlane"       for code         App Store       TestFlight"     the App
+                   signing"         screenshots"                    Store"
+```
 
-### TestFlight Beta
-> "Upload this app to TestFlight"
-
-Syncs certificates, increments build number, builds, and uploads.
-
-### App Store Release
-> "Submit to the App Store"
-
-Submits your tested TestFlight build for App Store review.
-
-### Code Signing
-> "Set up Match for code signing"
-
-Configures certificate sharing via private Git repo. No more "works on my machine."
-
-### Screenshots
-> "Automate App Store screenshots"
-
-Sets up Snapshot to capture screenshots across all device sizes and languages.
+| Step | What Claude Does |
+|------|------------------|
+| **Setup** | Creates `Appfile`, `Fastfile`, lanes from your Xcode project |
+| **Certs** | Configures Match for team certificate sharing via private Git repo |
+| **Screens** | Sets up Snapshot for automated screenshots across devices/languages |
+| **Beta** | Syncs certs, increments build, builds, uploads to TestFlight |
+| **Release** | Submits your tested TestFlight build for App Store review |
 
 ## What You Get
 
