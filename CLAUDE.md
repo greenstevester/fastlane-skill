@@ -12,23 +12,37 @@ This is a Claude Code skill plugin that automates Fastlane setup for iOS/macOS p
 .claude-plugin/
   marketplace.json         # Plugin registry metadata (required location for Claude Code)
 skills/
-  setup-fastlane.md        # The main skill definition (markdown with embedded commands)
+  setup-fastlane/
+    SKILL.md               # Initial Fastlane setup
+  beta/
+    SKILL.md               # TestFlight uploads
+  release/
+    SKILL.md               # App Store submission
+  match/
+    SKILL.md               # Code signing management
+  snapshot/
+    SKILL.md               # Automated screenshots
 todos.md                   # Roadmap and future skills
 ```
 
 ## Skill File Format
 
-The skill at `skills/setup-fastlane.md` uses Claude Code's skill syntax:
+Each skill uses Claude Code's skill syntax (in `SKILL.md`):
 - **Frontmatter** (YAML between `---`): metadata like `description`, `argument-hint`, `allowed-tools`
 - **Inline commands** with `!` syntax: e.g., `!`command`` executes shell commands when the skill runs
 - **Template placeholders**: `{{BUNDLE_ID}}`, `${ARGUMENTS}` for dynamic values
 
-## Testing the Skill
+## Testing the Skills
 
 No build step. To test changes:
-1. Copy `skills/setup-fastlane.md` to `~/.claude/commands/setup-fastlane.md`
-2. Run `/setup-fastlane` in Claude Code within an Xcode project directory
-3. Or install via: `/plugin marketplace add greenstevester/fastlane-skill`
+1. Quick test: `claude --plugin-dir /path/to/fastlane-skill`
+2. Full install test:
+   ```
+   /plugin marketplace remove fastlane-skill
+   /plugin marketplace add /path/to/fastlane-skill
+   /plugin install setup-fastlane@fastlane-skill
+   ```
+3. Run `/setup-fastlane` in Claude Code within an Xcode project directory
 
 ## Key Technical Details
 
