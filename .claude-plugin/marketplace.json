@@ -13,6 +13,7 @@
       "description": "Set up Fastlane for iOS/macOS app automation with Homebrew",
       "source": "./skills/setup-fastlane",
       "version": "1.1.0",
+      "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/setup-fastlane/SKILL.md",
       "author": {
         "name": "greenstevester"
       }
@@ -22,6 +23,7 @@
       "description": "Upload builds to TestFlight for beta testing",
       "source": "./skills/beta",
       "version": "1.0.0",
+      "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/beta/SKILL.md",
       "author": {
         "name": "greenstevester"
       }
@@ -31,6 +33,7 @@
       "description": "Submit app to the App Store with metadata and screenshots",
       "source": "./skills/release",
       "version": "1.0.0",
+      "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/release/SKILL.md",
       "author": {
         "name": "greenstevester"
       }
@@ -40,6 +43,7 @@
       "description": "Set up Match for iOS code signing certificate management",
       "source": "./skills/match",
       "version": "1.0.0",
+      "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/match/SKILL.md",
       "author": {
         "name": "greenstevester"
       }
@@ -49,6 +53,7 @@
       "description": "Automate App Store screenshot capture across devices and languages",
       "source": "./skills/snapshot",
       "version": "1.0.0",
+      "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/snapshot/SKILL.md",
       "author": {
         "name": "greenstevester"
       }
