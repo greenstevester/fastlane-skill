@@ -26,7 +26,23 @@
 - 1,000+ contributors
 - Used by millions of apps worldwide
 
-This skill brings Fastlane's power to Claude Code—set up everything through natural conversation.
+## Why This Skill?
+
+Fastlane is powerful but has a steep learning curve. This skill removes the friction:
+
+| Without This Skill | With This Skill |
+|--------------------|-----------------|
+| Read docs for hours | Ask in plain English |
+| Manually find bundle ID, team ID | Auto-detected from Xcode |
+| Copy/paste config templates | Generated and customized for you |
+| Debug cryptic Ruby errors | Guided troubleshooting |
+| Learn Fastlane syntax | Just describe what you want |
+
+**Key benefits:**
+- 🎯 **Zero learning curve** - No Fastlane expertise required
+- 🔍 **Smart introspection** - Reads your Xcode project, not you
+- ✅ **Best practices built-in** - Homebrew install, proper lane structure
+- 💬 **Conversational setup** - Iterate and adjust through chat
 
 > **Note:** Currently tested for iOS/macOS targets. Android support coming soon.
 
