@@ -1,0 +1,10 @@
+{
+  "name": "fastlane-skill",
+  "version": "1.1.0",
+  "description": "Claude Code skills for iOS/macOS app automation with Fastlane",
+  "author": {
+    "name": "greenstevester"
+  },
+  "repository": "https://github.com/greenstevester/fastlane-skill",
+  "license": "MIT"
+}
