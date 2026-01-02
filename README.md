@@ -18,6 +18,8 @@
 | `/setup-fastlane` | Generate complete Fastlane configuration from Xcode project |
 | `/beta` | Build and upload to TestFlight for beta testing |
 | `/release` | Submit to App Store for review and production release |
+| `/match` | Set up code signing certificate management |
+| `/snapshot` | Automate App Store screenshot capture |
 
 ## What
 
@@ -94,6 +96,18 @@ Syncs certificates, increments build number, builds, and uploads to TestFlight.
 ```
 Submits an existing TestFlight build to the App Store for review.
 
+**Code Signing Setup:**
+```
+/match
+```
+Sets up Match for team certificate sharing via a private Git repo. Handles development, App Store, and ad hoc certificates.
+
+**Automated Screenshots:**
+```
+/snapshot
+```
+Configures Snapshot to capture App Store screenshots across multiple devices and languages automatically.
+
 ## App Store Metadata
 
 ```bash
@@ -113,10 +127,11 @@ fastlane ios metadata
 
 | Issue | Solution |
 |-------|----------|
-| No Xcode project detected | Run from directory containing `.xcodeproj` (works with nested projects too) |
+| No Xcode project detected | Run from directory containing `.xcodeproj` or `.xcworkspace` |
 | Bundle ID not found | Ensure project has `PRODUCT_BUNDLE_IDENTIFIER` set |
 | Fastlane not found | Run `brew install fastlane` |
-| Code signing errors | Run `fastlane certificates_appstore` after setting up `match` |
+| Code signing errors | Run `/match` to set up certificate management |
+| Screenshot capture fails | Ensure UI test target exists and `SnapshotHelper.swift` is added |
 
 ## Contributing
 
