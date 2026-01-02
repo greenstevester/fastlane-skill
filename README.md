@@ -102,7 +102,7 @@ Navigate to your iOS/macOS project and ask Claude naturally:
 
 ## After Setup
 
-**What are lanes?** Lanes are automated workflows defined in your `Fastfile`. Each lane bundles multiple actions into a single command:
+**Fastlane** (obviously from its name) has a concept of **lanes**—automated workflows defined in your `Fastfile`. Each lane bundles multiple actions into a single command:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
