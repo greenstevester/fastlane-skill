@@ -19,6 +19,16 @@
 - [ ] Add CI/CD integration examples (GitHub Actions, Bitrise)
 - [x] Add `Matchfile` template generation (in `match.md`)
 
+## Android Support
+
+Current skills are tested for iOS/macOS only. Future Android work:
+
+- [ ] **setup-fastlane-android** - Gradle project introspection, `supply` setup
+- [ ] **beta-android** - Google Play internal/alpha/beta track uploads
+- [ ] **release-android** - Google Play production releases
+- [ ] **screengrab** - Automated Android screenshot capture
+- [ ] Update existing skills to detect platform (iOS vs Android)
+
 ## Notes
 
 - First Fastlane skills on SkillsMP

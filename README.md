@@ -28,6 +28,8 @@
 
 This skill brings Fastlane's power to Claude Code—set up everything through natural conversation.
 
+> **Note:** Currently tested for iOS/macOS targets. Android support coming soon.
+
 ## Prerequisites
 
 - macOS with Xcode CLI tools
