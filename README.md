@@ -102,14 +102,32 @@ Navigate to your iOS/macOS project and ask Claude naturally:
 
 ## After Setup
 
+**What are lanes?** Lanes are automated workflows defined in your `Fastfile`. Each lane bundles multiple actions into a single command:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  Lane: "beta"                                                   │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐        │
+│  │  sync   │──▶│increment│──▶│  build  │──▶│ upload  │        │
+│  │  certs  │   │ version │   │   app   │   │TestFlight│       │
+│  └─────────┘   └─────────┘   └─────────┘   └─────────┘        │
+└─────────────────────────────────────────────────────────────────┘
+                              ▲
+                              │
+                    fastlane ios beta   ◀── One command runs all steps
+```
+
+**Run your lanes:**
 ```bash
-# Run your new lanes
 fastlane lanes              # See all available lanes
 fastlane ios test           # Run tests
 fastlane ios beta           # Upload to TestFlight
 fastlane ios release        # Submit to App Store
+```
 
-# Manage metadata
+**Manage metadata:**
+```bash
 fastlane deliver download_metadata
 fastlane deliver download_screenshots
 ```
