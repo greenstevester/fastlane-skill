@@ -148,6 +148,30 @@ fastlane ios metadata
 | Code signing errors | Run `/match` to set up certificate management |
 | Screenshot capture fails | Ensure UI test target exists and `SnapshotHelper.swift` is added |
 
+## Local Development
+
+To test changes locally before publishing:
+
+**Option 1: Quick dev testing** (no install, changes picked up on restart)
+```bash
+claude --plugin-dir /path/to/fastlane-skill
+```
+
+**Option 2: Test full install flow**
+
+First remove any existing installation:
+```
+/plugin marketplace remove greenstevester-fastlane-skill
+```
+
+Then add local directory as marketplace:
+```
+/plugin marketplace add /path/to/fastlane-skill
+/plugin install fastlane-skill@fastlane-skill
+```
+
+Restart Claude Code to load the skills.
+
 ## Contributing
 
 Issues and PRs welcome at [github.com/greenstevester/fastlane-skill](https://github.com/greenstevester/fastlane-skill).
