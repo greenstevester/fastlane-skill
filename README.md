@@ -68,6 +68,12 @@ curl -o .claude/commands/setup-fastlane.md \
   https://raw.githubusercontent.com/greenstevester/fastlane-skill/main/skills/setup-fastlane.md
 ```
 
+**Update to Latest Version**
+```
+/plugin marketplace update greenstevester/fastlane-skill
+```
+Then restart Claude Code to load the updated skills.
+
 ### 2. Run It
 
 Navigate to your iOS/macOS project and run:
