@@ -22,7 +22,7 @@
       "name": "beta",
       "description": "Upload builds to TestFlight for beta testing",
       "source": "./skills/beta",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/beta/SKILL.md",
       "author": {
         "name": "greenstevester"
@@ -32,7 +32,7 @@
       "name": "release",
       "description": "Submit app to the App Store with metadata and screenshots",
       "source": "./skills/release",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/release/SKILL.md",
       "author": {
         "name": "greenstevester"
@@ -42,7 +42,7 @@
       "name": "match",
       "description": "Set up Match for iOS code signing certificate management",
       "source": "./skills/match",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/match/SKILL.md",
       "author": {
         "name": "greenstevester"
@@ -52,7 +52,7 @@
       "name": "snapshot",
       "description": "Automate App Store screenshot capture across devices and languages",
       "source": "./skills/snapshot",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/snapshot/SKILL.md",
       "author": {
         "name": "greenstevester"
