@@ -28,7 +28,9 @@
 
 ## Why This Skill?
 
-Fastlane is powerful and you need to read the docs carefully to use it correctly. This skill removes the friction:
+Fastlane is powerful—but **you** need to read the docs to use it correctly.
+
+**Here, we invert this:** Claude already read the docs, knows how to use it correctly, and **you** just use the skill and profit.
 
 | Without This Skill | With This Skill |
 |--------------------|-----------------|
