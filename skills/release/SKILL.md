@@ -1,4 +1,5 @@
 ---
+name: release
 description: Submit iOS app to App Store for review
 argument-hint: [--version "1.x.x"] [--auto-release] [--skip-metadata]
 allowed-tools: Bash, Read

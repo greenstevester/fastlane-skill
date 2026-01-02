@@ -1,4 +1,5 @@
 ---
+name: match
 description: Set up Match for iOS code signing certificate management
 argument-hint: [--readonly] [--type development|appstore|adhoc]
 allowed-tools: Bash, Read, Write, Edit

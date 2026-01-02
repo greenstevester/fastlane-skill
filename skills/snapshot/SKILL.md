@@ -1,4 +1,5 @@
 ---
+name: snapshot
 description: Automate App Store screenshot capture across devices and languages
 argument-hint: [--devices "iPhone 15 Pro"] [--languages "en-US,ja"]
 allowed-tools: Bash, Read, Write, Edit

@@ -1,4 +1,5 @@
 ---
+name: beta
 description: Build and upload iOS app to TestFlight
 argument-hint: [--skip-build-increment] [--external] [--changelog "text"]
 allowed-tools: Bash, Read
