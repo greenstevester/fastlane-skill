@@ -52,7 +52,7 @@ Fastlane is powerful but has a steep learning curve. This skill removes the fric
 - [Homebrew](https://brew.sh)
 - Fastlane: `brew install fastlane`
 
-## Quick Start
+## Installation
 
 ```
 /plugin marketplace add greenstevester/fastlane-skill
