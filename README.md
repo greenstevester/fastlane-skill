@@ -13,18 +13,20 @@
 
 ## Why Fastlane?
 
-[Fastlane](https://fastlane.tools) is the industry-standard automation tool for iOS and Android deployment, trusted by companies like Google, Uber, and Airbnb. Kudos to all the contributors who saved us from the joy of manually uploading 47 screenshots at 2am.
+[Fastlane](https://fastlane.tools) is the industry-standard automation tool for iOS and Android deployment, trusted by companies like Google, Uber, and Airbnb.
 
-**What it does:**
-- 🚀 Automates screenshots, beta deployment, App Store releases, and code signing
-- ⏱️ Turns hours of manual work into single commands
-- 🔄 Ensures consistent, reproducible releases every time
-
-**Battle-tested:**
+**Fastlane:**
+- Automates screenshots, beta deployment, App Store releases, and code signing
+- Turns hours of manual work into single commands
+- Ensures consistent, reproducible releases every time
 - 40,000+ GitHub stars
 - 6,000+ forks
 - 1,000+ contributors
 - Used by millions of apps worldwide
+
+_Before Fastlane, releasing an app to Apple was like trying to get through airport security with a bottle of water and a sense of optimism. I can only imagine that everyone who contributed to Fastlane, were also wondering why Apple thought uploading 47 screenshots in 12 languages by hand, was somehow an elegantly designed "dev-friendly" workflow. I wish Jonny Ive was also involved in the engine room on software development life-cycles, where he would have shouted down the maze of activities needed to just ship a new version of your app._
+
+Anyway, BIG Kudos to all the Fastlane [contributors](https://github.com/fastlane/fastlane/graphs/contributors) tho, who saved us all from the joy of manually uploading screenshots at 2am.
 
 ## Why This Skill?
 
@@ -41,10 +43,10 @@ Fastlane is powerful—but **you** need to read the docs to use it correctly.
 | Learn Fastlane syntax | Just describe what you want |
 
 **Key benefits:**
-- 🎯 **Zero learning curve** - No Fastlane expertise required
-- 🔍 **Smart introspection** - Reads your Xcode project, not you
-- ✅ **Best practices built-in** - Homebrew install, proper lane structure
-- 💬 **Conversational setup** - Iterate and adjust through chat
+- **Zero learning curve** - No Fastlane expertise required
+- **Smart introspection** - Reads your Xcode project, not you
+- **Best practices built-in** - Homebrew install, proper lane structure
+- **Conversational setup** - Iterate and adjust through chat
 
 > **Note:** Currently tested for iOS/macOS targets. Android support coming soon.
 
