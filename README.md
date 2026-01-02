@@ -11,6 +11,23 @@
 
 > **From zero to App Store in natural language.** Just tell Claude what you need.
 
+## Why Fastlane?
+
+[Fastlane](https://fastlane.tools) is the industry-standard automation tool for iOS and Android deployment, trusted by companies like Google, Uber, and Airbnb.
+
+**What it does:**
+- 🚀 Automates screenshots, beta deployment, App Store releases, and code signing
+- ⏱️ Turns hours of manual work into single commands
+- 🔄 Ensures consistent, reproducible releases every time
+
+**Battle-tested:**
+- 40,000+ GitHub stars
+- 6,000+ forks
+- 1,000+ contributors
+- Used by millions of apps worldwide
+
+This skill brings Fastlane's power to Claude Code—set up everything through natural conversation.
+
 ## Prerequisites
 
 - macOS with Xcode CLI tools
