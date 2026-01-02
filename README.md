@@ -9,7 +9,7 @@
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-purple.svg)](https://claude.ai/code)
 [![Fastlane](https://img.shields.io/badge/Fastlane-00F200?logo=fastlane&logoColor=white)](https://fastlane.tools/)
 
-> **From zero to App Store in natural language.** Just tell Claude what you need.
+> **From zero to App Store in natural language.** Let Claude do the heavy lifting.
 
 ## Why Fastlane?
 
