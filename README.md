@@ -11,12 +11,20 @@
 
 > **From zero to App Store in natural language.** Just tell Claude what you need.
 
+## Prerequisites
+
+- macOS with Xcode CLI tools
+- [Homebrew](https://brew.sh)
+- Fastlane: `brew install fastlane`
+
 ## Quick Start
 
 ```
 /plugin marketplace add greenstevester/fastlane-skill
 ```
-Restart Claude Code. Done.
+Restart Claude Code.
+
+**Verify:** Ask Claude "What Fastlane skills do you have?"
 
 ## Usage
 
@@ -49,19 +57,13 @@ Sets up Snapshot to capture screenshots across all device sizes and languages.
 
 ## What You Get
 
-| Skill | What It Does | Time Saved |
-|-------|-------------|------------|
-| `setup-fastlane` | Complete Fastlane config from Xcode project | 2-3 hours |
-| `beta` | One command TestFlight uploads | 30 min/release |
-| `release` | App Store submission workflow | 1 hour |
-| `match` | Team code signing setup | 4-6 hours |
-| `snapshot` | Automated screenshots (50+ images) | 3-4 hours |
-
-## Prerequisites
-
-- macOS with Xcode CLI tools
-- [Homebrew](https://brew.sh)
-- Fastlane: `brew install fastlane`
+| Skill | What It Does | Time Saved | Docs |
+|-------|-------------|------------|------|
+| `setup-fastlane` | Complete Fastlane config from Xcode project | 2-3 hours | [→](skills/setup-fastlane/SKILL.md) |
+| `beta` | One command TestFlight uploads | 30 min/release | [→](skills/beta/SKILL.md) |
+| `release` | App Store submission workflow | 1 hour | [→](skills/release/SKILL.md) |
+| `match` | Team code signing setup | 4-6 hours | [→](skills/match/SKILL.md) |
+| `snapshot` | Automated screenshots (50+ images) | 3-4 hours | [→](skills/snapshot/SKILL.md) |
 
 ## After Setup
 
