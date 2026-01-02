@@ -48,7 +48,15 @@ Fastlane is powerful—but **you** need to read the docs to use it correctly.
 - **Best practices built-in** - Homebrew install, proper lane structure
 - **Conversational setup** - Iterate and adjust through chat
 
-> **Note:** Currently tested for iOS/macOS targets. Android support coming soon.
+**Example prompts:**
+```
+"Set up Fastlane for my iOS app"
+"Automate my App Store screenshots"
+"Upload this build to TestFlight"
+"Submit my app to the App Store"
+```
+
+> **Note:** These skills enhance Claude's knowledge—ask naturally, no slash commands needed. Currently tested for iOS/macOS targets. Android support coming soon.
 
 ## Prerequisites
 

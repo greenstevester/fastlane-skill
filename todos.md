@@ -14,6 +14,9 @@
 
 ## Improvements to Existing Skills
 
+- [x] Add example prompts and clarify skills are natural language, not slash commands (README)
+- [x] Simplify setup-fastlane/SKILL.md - one-time setup messaging with ASCII art
+- [x] Add ASCII art walkthrough (included in setup-fastlane simplification)
 - [x] Add support for workspace (`.xcworkspace`) detection
 - [x] Add App Store Connect API key setup guidance (in `match.md` CI/CD section)
 - [ ] Add CI/CD integration examples (GitHub Actions, Bitrise)
