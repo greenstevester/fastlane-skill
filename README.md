@@ -66,9 +66,24 @@ Fastlane is powerful—but **you** need to read the docs to use it correctly.
 
 ## Installation
 
+**1. Register the marketplace:**
+
 ```
 /plugin marketplace add greenstevester/fastlane-skill
 ```
+
+**2. Install the skills you want** (adding the marketplace alone doesn't install anything):
+
+```
+/plugin install setup-fastlane@fastlane-skill
+/plugin install beta@fastlane-skill
+/plugin install release@fastlane-skill
+/plugin install match@fastlane-skill
+/plugin install snapshot@fastlane-skill
+```
+
+Or run `/plugin`, open the `fastlane-skill` marketplace, and enable them from the menu.
+
 Restart Claude Code.
 
 **Verify:** Ask Claude "What Fastlane skills do you have?"
