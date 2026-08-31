@@ -6,7 +6,6 @@
   "owner": {
     "name": "greenstevester"
   },
-  "repository": "https://github.com/greenstevester/fastlane-skill",
   "plugins": [
     {
       "name": "setup-fastlane",
@@ -16,7 +15,8 @@
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/setup-fastlane/SKILL.md",
       "author": {
         "name": "greenstevester"
-      }
+      },
+      "repository": "https://github.com/greenstevester/fastlane-skill"
     },
     {
       "name": "beta",
@@ -26,7 +26,8 @@
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/beta/SKILL.md",
       "author": {
         "name": "greenstevester"
-      }
+      },
+      "repository": "https://github.com/greenstevester/fastlane-skill"
     },
     {
       "name": "release",
@@ -36,7 +37,8 @@
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/release/SKILL.md",
       "author": {
         "name": "greenstevester"
-      }
+      },
+      "repository": "https://github.com/greenstevester/fastlane-skill"
     },
     {
       "name": "match",
@@ -46,7 +48,8 @@
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/match/SKILL.md",
       "author": {
         "name": "greenstevester"
-      }
+      },
+      "repository": "https://github.com/greenstevester/fastlane-skill"
     },
     {
       "name": "snapshot",
@@ -56,7 +59,8 @@
       "homepage": "https://github.com/greenstevester/fastlane-skill/blob/main/skills/snapshot/SKILL.md",
       "author": {
         "name": "greenstevester"
-      }
+      },
+      "repository": "https://github.com/greenstevester/fastlane-skill"
     }
   ]
 }
