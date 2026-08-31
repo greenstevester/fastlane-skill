@@ -1,5 +1,5 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
   "name": "fastlane-skill",
   "version": "1.1.5",
   "description": "Claude Code skills for iOS/macOS app automation with Fastlane",
