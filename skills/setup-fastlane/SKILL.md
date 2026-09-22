@@ -1,7 +1,7 @@
 ---
 name: setup-fastlane
 description: Set up Fastlane for iOS/macOS app automation
-argument-hint: [project-path]
+argument-hint: "[project-path]"
 allowed-tools: Bash, Read, Write, Edit, Glob
 ---
 
