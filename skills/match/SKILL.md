@@ -10,7 +10,7 @@ allowed-tools: Bash, Read, Write, Edit
 Set up Fastlane Match to manage iOS code signing certificates and provisioning profiles in a shared Git repository.
 
 ### Pre-flight Checks
-- Fastlane installed: !`fastlane --version 2>/dev/null | grep "fastlane " | head -1 || echo "✗ Not installed - run: brew install fastlane"`
+- Fastlane: !`if grep -qE "^[[:space:]]*gem[[:space:]]+.fastlane." Gemfile 2>/dev/null; then echo "Gemfile pins fastlane here, so run every fastlane command below as bundle exec fastlane (a bare fastlane runs $(command -v fastlane || echo nothing), not the pinned copy)."; [ "$(command -v ruby)" = /usr/bin/ruby ] && echo "⚠ System Ruby is first on PATH and bundler fails under it. Prefix each command with PATH=/opt/homebrew/opt/ruby/bin:\$PATH, or run /setup-fastlane to check the setup."; elif command -v fastlane >/dev/null; then echo "✓ $(command -v fastlane) (no Gemfile in this folder)"; else echo "✗ Not found, and no Gemfile in this folder. Install: brew install fastlane"; fi; true`
 - Fastfile exists: !`ls fastlane/Fastfile 2>/dev/null && echo "✓ Found" || echo "✗ Not found - run /setup-fastlane first"`
 - Existing Matchfile: !`ls fastlane/Matchfile 2>/dev/null && echo "✓ Already configured" || echo "○ Not configured yet"`
 - Git available: !`git --version 2>/dev/null | head -1 || echo "✗ Git not installed"`
@@ -52,7 +52,8 @@ gh repo create certificates --private
 
 ## Step 2: Initialize Match
 
-Run match init to create your Matchfile:
+Run match init to create your Matchfile. If the project has a Gemfile, run every command on
+this page as `bundle exec fastlane …` so the version in Gemfile.lock runs.
 
 ```bash
 fastlane match init
@@ -206,6 +207,9 @@ Add to `ci_scripts/ci_post_clone.sh`:
 # Install Fastlane and sync certificates
 brew install fastlane
 fastlane ios certificates   # setup_ci + match(readonly: true)
+
+# Projects with a Gemfile: use the pinned fastlane instead of Homebrew's
+# bundle install && bundle exec fastlane ios certificates
 ```
 
 Set `MATCH_PASSWORD` in Xcode Cloud environment variables.
