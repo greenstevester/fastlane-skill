@@ -10,7 +10,7 @@ allowed-tools: Bash, Read
 Build and upload the iOS app to TestFlight for beta testing.
 
 ### Pre-flight Checks
-- Fastlane installed: !`fastlane --version 2>/dev/null | grep "fastlane " | head -1 || echo "✗ Not installed - run: brew install fastlane"`
+- Fastlane: !`if grep -qE "^[[:space:]]*gem[[:space:]]+.fastlane." Gemfile 2>/dev/null; then echo "Gemfile pins fastlane here, so run every fastlane command below as bundle exec fastlane (a bare fastlane runs $(command -v fastlane || echo nothing), not the pinned copy)."; [ "$(command -v ruby)" = /usr/bin/ruby ] && echo "⚠ System Ruby is first on PATH and bundler fails under it. Prefix each command with PATH=/opt/homebrew/opt/ruby/bin:\$PATH, or run /setup-fastlane to check the setup."; elif command -v fastlane >/dev/null; then echo "✓ $(command -v fastlane) (no Gemfile in this folder)"; else echo "✗ Not found, and no Gemfile in this folder. Install: brew install fastlane"; fi; true`
 - Fastfile exists: !`ls fastlane/Fastfile 2>/dev/null && echo "✓ Found" || echo "✗ Not found - run /setup-fastlane first"`
 - App-specific password: !`[ -n "$FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD" ] && echo "✓ Set" || echo "⚠️ Not set - export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD='xxxx-xxxx-xxxx-xxxx'"`
 
@@ -31,7 +31,8 @@ Build and upload the iOS app to TestFlight for beta testing.
 ## Commands
 
 ### Standard Beta (Internal Testers)
-Run from your project directory (where `fastlane/` lives):
+Run from your project directory (where `fastlane/` lives). If the project has a Gemfile, run
+every command on this page as `bundle exec fastlane …` so the version in Gemfile.lock runs.
 ```bash
 fastlane beta
 ```
